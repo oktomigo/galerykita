@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Love Button</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Roboto:wght@300&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background: linear-gradient(to right, #ff9a9e, #fecfef);
+            font-family: 'Roboto', sans-serif;
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            background-color: #fff;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            position: relative;
+        }
+        h1 {
+            font-family: 'Pacifico', cursive;
+            font-size: 2.5rem;
+            color: #e63946;
+        }
+        img {
+            border-radius: 50%;
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+        }
+        .btn {
+            font-size: 1.2rem;
+            padding: 10px 20px;
+            margin: 20px;
+            border-radius: 50px;
+        }
+        #noBtn {
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Sayangg kamu kangen ga sama akuuu?</h1>
+    <img src="img/4.jpeg" alt="Si Cantik" class="mt-3">
+    <h1 class="mt-3">Si Cantik</h1>
+    <button id="yesBtn" class="btn btn-success mt-3">Iya</button>
+    <button id="noBtn" class="btn btn-danger mt-3">Tidak</button>
+</div>
+
+<script>
+    document.getElementById('yesBtn').addEventListener('click', function() {
+        alert("Aaaaaa aku juga kangen banget saya gumuyyyy 😍😍😍😍😍😍😍😍😍😍");
+    });
+
+    document.getElementById('noBtn').addEventListener('click', function() {
+        const noBtn = document.getElementById('noBtn');
+        const container = document.querySelector('.container');
+
+        const containerRect = container.getBoundingClientRect();
+        const newX = Math.floor(Math.random() * (containerRect.width - noBtn.offsetWidth));
+        const newY = Math.floor(Math.random() * (containerRect.height - noBtn.offsetHeight));
+
+        noBtn.style.left = newX + 'px';
+        noBtn.style.top = newY + 'px';
+    });
+</script>
+
+</body>
+</html>
